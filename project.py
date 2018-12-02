@@ -1,7 +1,7 @@
 import serial
 import requests
 
-ser = serial.Serial('COM3', 9600)
+ser = serial.Serial('/dev/ttyACM0', 9600)
 
 def enviar_distancia(tacho_id, distancia):
     ENDPOINT = 'https://arduinio.herokuapp.com/api/levels/'
