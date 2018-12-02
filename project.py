@@ -1,7 +1,7 @@
 import serial
 import requests
 
-ser = serial.Serial('/dev/ttyS0', 9600)
+ser = serial.Serial('/dev/ttyACM0', 9600)
 
 def enviar_distancia(tacho_id, distancia):
     ENDPOINT = 'https://arduinio.herokuapp.com/api/levels/'
@@ -21,6 +21,7 @@ if __name__ == '__main__':
     #tacho_id = 2
     while True:
         print('Distance:')
+        print(ser)
         x = ser.readline()
         distance = x.decode().strip()
         print(x.decode().strip())
